@@ -1,0 +1,597 @@
+@charset "utf-8";
+
+/*-----------------------共通ここから-------------------------------*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 1.6em;
+    color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+.section-title h3 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    color: #391E88;
+    margin-bottom: 0.28em;
+}
+
+.section-title {
+    margin-bottom: 1.875em;
+}
+
+.section-title h5 {
+    color: #391E88;
+}
+
+.more-btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 13.75em;
+    padding: 1.26em 0;
+    border: 1px solid #fff;
+    vertical-align: middle;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    background: -moz-linear-gradient(right, #7633a4 0%, #250d65 51%, #7633a4 100%);
+    background: -webkit-linear-gradient(right, #7633a4 0%, #250d65 51%, #7633a4 100%);
+    background: linear-gradient(to right, #7633a4 0%, #250d65 51%, #7633a4 100%);
+    position: relative;
+    transition: 0.3s;
+    background-size: 200% auto;
+    margin-top: 2.36em;
+}
+
+.more-btn:hover {
+    background-position: right center;
+}
+
+.more-btn::after {
+    font-family: "Font Awesome 5 PRO";
+    content: '\f0da';
+    font-weight: 900;
+    position: absolute;
+    transition: 0.3s;
+    right: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.more-btn:hover::after {
+    right: 1.2em;
+}
+
+
+
+/*-----------------------共通ここまで-------------------------------*/
+
+/*-----------------------ヘッダー-------------------------------*/
+
+.header-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    position: fixed;
+    z-index: 2;
+}
+
+.header-group.change-color {
+    background-color: #21054D;
+}
+
+.logo {
+    display: block;
+    margin: auto 0;
+}
+
+
+.nav-list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list ul li a {
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    margin: 0 0.8em;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9375em;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-list ul li a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform 0.4s;
+}
+
+
+.nav-list ul li a:hover::after {
+    transform: scale(1, 1);
+}
+
+.hero {
+    background: url(../img/hero.jpg) center center / cover no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30em;
+    text-align: center;
+    color: #fff;
+}
+
+.main-title h1 {
+    font-size: 7.2rem;
+    margin-bottom: 0.417em;
+}
+
+.sub-title {
+    font-size: 2.4rem;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 6.25em;
+    right: 1.875em;
+    color: #fff;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.hero-scroll::after {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    content: '';
+    width: 1px;
+    height: 5.5em;
+    background: #fff;
+    animation: scrollDownLine 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+    -webkit-animation: scrollDownLine 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+    -moz-animation: scrollDownLine 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes scrollDownLine {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+
+    50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    }
+}
+
+@-webkit-keyframes scrollDownLine {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+
+    50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    }
+}
+
+.contact-btn {
+    position: relative;
+    margin-top: 3.125em;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn::after {
+    position: absolute;
+}
+
+
+/*-----------------------ヘッダーここまで-------------------------------*/
+
+/*-----------------------メイン------------------------------*/
+
+/*-----------------------NEWS-----------------------------------*/
+.news {
+    display: block;
+    max-width: 917px;
+    margin: 0 auto;
+    padding: 3.75em 0;
+}
+
+.news-section {
+    margin-right: 3.75em;
+}
+
+.news-content {
+    display: flex;
+}
+
+.news-box ul {
+    margin: 0;
+    padding: 0;
+}
+
+.news-box ul li {
+    display: flex;
+    margin-bottom: 1.25em;
+}
+
+.news-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+.news-item:last-child {
+    margin: 0;
+}
+
+.news-tag {
+    min-width: 190px;
+}
+
+.news-time {
+    display: inline-block;
+    margin-right: 0.625em;
+}
+
+.news-title {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 82px;
+    padding: 0.417em;
+    text-align: center;
+    background-color: #E8E8E8;
+    border-radius: 50px;
+}
+
+.news-post {
+    text-decoration: none;
+    color: #333333;
+}
+
+.news-post:hover {
+    text-decoration: underline;
+}
+
+/*-----------------------SERVICE-----------------------------------*/
+
+.service-content {
+    max-width: 1110px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-block ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 1.875em 0 0;
+    padding: 0;
+}
+
+.service-block ul li {
+    margin-right: 30px;
+}
+
+.service-block ul li:last-child {
+    margin: 0;
+}
+
+.service-img {
+    max-width: 100%;
+}
+
+.service-block ul li h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1.38rem 0;
+}
+
+.service-block ul li p {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+
+/*---------------------WORKS---------------------------*/
+
+.works {
+    max-width: 1260px;
+    margin: 0 auto;
+    margin-top: 8.75em;
+    position: relative;
+}
+
+.works-group {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 3.75em 0;
+}
+
+.works-content {
+    display: inline-block;
+    text-align: center;
+    margin-left: 3.75em;
+    padding: 10.15em 6.875em 0 0;
+    line-height: 1.6875em;
+}
+
+.works-content p {
+    text-align: left;
+}
+
+.works::after {
+    top: 0;
+    left: 25%;
+    width: 75%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    background: #F0F0F0;
+    z-index: -1;
+}
+
+.fade {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    padding: 0;
+    height: auto;
+}
+
+.fade img {
+    width: 100%;
+    position: relative;
+}
+
+.slick-next::before,
+.slick-prev::before {
+    position: absolute;
+    top: 50%;
+    font-family: "Font Awesome 5 PRO";
+    font-weight: 900;
+    display: block;
+    transform: translateY(-50%);
+    color: #391e88;
+    font-size: 3.2rem;
+}
+
+.slick-prev {
+    z-index: 2;
+}
+
+.slick-next::before {
+    content: "\f105";
+    right: 1.56em;
+}
+
+.slick-prev::before {
+    content: "\f104";
+    left: 1.56em;
+}
+
+.slick-dots {
+    text-align: right;
+}
+
+.slick-dots li button:before {
+    font-size: 40px;
+}
+
+.slick-dots li {
+    margin: 0%;
+}
+
+
+/*---------------------COMPANY---------------------------*/
+
+.company {
+    margin: 3.75em auto 0;
+    max-width: 1300px;
+}
+
+.company-content {
+    background: url(../img/bg-face.png), url(../img/bg-circle.png);
+    background-position: center center, center center;
+    background-size: 100%, 60% auto;
+    background-repeat: no-repeat, no-repeat;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 9em 0;
+}
+
+.concept-text {
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: 600;
+    background: linear-gradient(transparent 70%, #f5f534 0%);
+}
+
+.company-group p {
+    margin-top: 2.1875em;
+}
+
+
+/*---------------------RECRUIT---------------------------*/
+
+.recruit {
+    
+}
+
+.recruit-group {
+    display: flex;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.recruit-content {
+    width: 40%;
+    text-align: center;
+    padding: 4.0em 0;
+    height: 21.25em;
+    background-color: #F7F7F7;
+}
+
+.recruit-img {
+    width: 60%;
+}
+
+
+/*---------------------CONTACT---------------------------*/
+
+.contact-content{
+    text-align: center;
+    margin-top: 6.25em;
+    background-color: #F7F7F7;
+    padding: 5em 0;
+}
+
+
+/*---------------------フッター---------------------------*/
+
+.footer {
+    background-color: #120E19;
+    padding: 3.9375em 0;
+}
+
+.footer-nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav ul li{
+    margin-right: 1.6875em;
+}
+
+.footer-nav ul li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-nav ul li a:hover{
+    color: rgb(255, 255, 255,0.6);
+}
+
+.inner{
+    margin-top: 1.5625em;
+}
+
+.copyright {
+    color: #A798B7;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#page_top {
+    position: fixed;
+    bottom: 47px;
+    right: 45px;
+}
+#page_top a .fa-arrow-up {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    background-color: hsl(255, 64%, 33%);
+    padding: 20px;
+    border-radius: 50%;
+}
+#page_top a .fa-arrow-up:hover {
+    text-decoration: none;
+    background-color: hsl(255, 64%, 33%,0.8);
+    color: rgb(255, 255, 255,0.8);
+}
+
+
+
